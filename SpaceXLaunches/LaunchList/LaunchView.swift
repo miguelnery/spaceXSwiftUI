@@ -33,15 +33,13 @@ struct LaunchInfoHStack: View {
     ]
     
     var body: some View {
-        VStack {
-            Grid(alignment: .leading) {
-                ForEach(models, id: \.0) { model in
-                    GridRow() {
-                        Text(model.title)
-                            .fixedSize(horizontal: false, vertical: true)
-                        Text(model.value)
-                            .fixedSize(horizontal: false, vertical: true)
-                    }
+        Grid(alignment: .leading) {
+            ForEach(models, id: \.0) { model in
+                GridRow() {
+                    Text(model.title)
+                        .fixedSize(horizontal: false, vertical: true)
+                    Text(model.value)
+                        .fixedSize(horizontal: false, vertical: true)
                 }
             }
         }
