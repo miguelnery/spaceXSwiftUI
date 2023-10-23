@@ -18,6 +18,7 @@
 		46F1869E2AE5B3BB00472CFD /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F1869D2AE5B3BB00472CFD /* Icon.swift */; };
 		46F186A02AE5BAB200472CFD /* LaunchListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F1869F2AE5BAB200472CFD /* LaunchListViewModel.swift */; };
 		46F186A32AE5E37F00472CFD /* InfoHStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F186A22AE5E37F00472CFD /* InfoHStack.swift */; };
+		46F186A62AE688DC00472CFD /* SpaceXLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F186A52AE688DC00472CFD /* SpaceXLaunch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		46F1869D2AE5B3BB00472CFD /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
 		46F1869F2AE5BAB200472CFD /* LaunchListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListViewModel.swift; sourceTree = "<group>"; };
 		46F186A22AE5E37F00472CFD /* InfoHStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoHStack.swift; sourceTree = "<group>"; };
+		46F186A52AE688DC00472CFD /* SpaceXLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXLaunch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 		460459732AE461EA002B018A /* SpaceXLaunches */ = {
 			isa = PBXGroup;
 			children = (
+				46F186A42AE688CA00472CFD /* Network */,
 				460459742AE461EA002B018A /* SpaceXLaunchesApp.swift */,
 				460459782AE461F0002B018A /* Assets.xcassets */,
 				46F186982AE575C700472CFD /* LaunchList */,
@@ -153,6 +156,22 @@
 				46F186A22AE5E37F00472CFD /* InfoHStack.swift */,
 			);
 			path = UICommons;
+			sourceTree = "<group>";
+		};
+		46F186A42AE688CA00472CFD /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				46F186A72AE68BE100472CFD /* Models */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		46F186A72AE68BE100472CFD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				46F186A52AE688DC00472CFD /* SpaceXLaunch.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,6 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46F186A62AE688DC00472CFD /* SpaceXLaunch.swift in Sources */,
 				460459752AE461EA002B018A /* SpaceXLaunchesApp.swift in Sources */,
 				46F186A32AE5E37F00472CFD /* InfoHStack.swift in Sources */,
 				46F1869C2AE5766C00472CFD /* LaunchView.swift in Sources */,
