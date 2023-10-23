@@ -20,6 +20,8 @@
 		46F186A32AE5E37F00472CFD /* InfoHStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F186A22AE5E37F00472CFD /* InfoHStack.swift */; };
 		46F186A62AE688DC00472CFD /* SpaceXLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F186A52AE688DC00472CFD /* SpaceXLaunch.swift */; };
 		46F186A92AE68C5500472CFD /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F186A82AE68C5500472CFD /* Endpoint.swift */; };
+		46F186AC2AE68CF500472CFD /* SpaceXEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F186AB2AE68CF500472CFD /* SpaceXEndpoint.swift */; };
+		46F186B02AE7204C00472CFD /* URLSessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F186AF2AE7204C00472CFD /* URLSessionService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		46F186A22AE5E37F00472CFD /* InfoHStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoHStack.swift; sourceTree = "<group>"; };
 		46F186A52AE688DC00472CFD /* SpaceXLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXLaunch.swift; sourceTree = "<group>"; };
 		46F186A82AE68C5500472CFD /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		46F186AB2AE68CF500472CFD /* SpaceXEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXEndpoint.swift; sourceTree = "<group>"; };
+		46F186AF2AE7204C00472CFD /* URLSessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +169,7 @@
 			children = (
 				46F186AA2AE68C6800472CFD /* SpaceX */,
 				46F186A82AE68C5500472CFD /* Endpoint.swift */,
+				46F186AF2AE7204C00472CFD /* URLSessionService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -181,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				46F186A72AE68BE100472CFD /* Models */,
+				46F186AB2AE68CF500472CFD /* SpaceXEndpoint.swift */,
 			);
 			path = SpaceX;
 			sourceTree = "<group>";
@@ -320,7 +326,9 @@
 				46F186A92AE68C5500472CFD /* Endpoint.swift in Sources */,
 				46F186A32AE5E37F00472CFD /* InfoHStack.swift in Sources */,
 				46F1869C2AE5766C00472CFD /* LaunchView.swift in Sources */,
+				46F186B02AE7204C00472CFD /* URLSessionService.swift in Sources */,
 				46F1869E2AE5B3BB00472CFD /* Icon.swift in Sources */,
+				46F186AC2AE68CF500472CFD /* SpaceXEndpoint.swift in Sources */,
 				46F186A02AE5BAB200472CFD /* LaunchListViewModel.swift in Sources */,
 				46F1869A2AE575D600472CFD /* LaunchListView.swift in Sources */,
 			);
