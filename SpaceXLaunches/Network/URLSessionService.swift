@@ -1,10 +1,10 @@
 import Combine
 import Foundation
 
-final class URLSessionService {
-    private let urlSession: URLSession
+final class URLSessionService<SessionWrapper: URLSessionWrapperProtocol> {
+    private let urlSession: SessionWrapper
     
-    init(urlSession: URLSession) {
+    init(urlSession: SessionWrapper) {
         self.urlSession = urlSession
     }
 }
