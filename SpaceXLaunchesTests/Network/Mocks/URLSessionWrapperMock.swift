@@ -8,7 +8,7 @@ final class URLSessionWrapperMock: URLSessionWrapperProtocol {
     func dataTaskPublisher(for url: URL) -> AnyDataTaskPublisher {
         guard let impl = dataTaskPublisherImpl else {
             XCTFail("Must provide implemententation before calling this method.")
-            return Fail<(data: Data, response: URLResponse), URLError>(error: .init(.unknown))
+            return Fail<_, URLError>(error: .init(.unknown))
                 .eraseToAnyPublisher()
         }
         return impl(url)

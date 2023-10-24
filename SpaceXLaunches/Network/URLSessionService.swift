@@ -23,7 +23,7 @@ extension URLSessionService: EndpointFectcher {
     }
 }
 
-enum ServiceError: Error {
+enum ServiceError: Error, Equatable {
     case badURL
     case urlError(URLError)
 }
