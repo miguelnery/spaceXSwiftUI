@@ -1,10 +1,10 @@
 import Combine
 
-protocol LaunchListViewModelProtocol: ObservableObject {
+protocol LaunchListViewModel: ObservableObject {
     var launchModels: [LaunchView.Model] { get }
 }
 
-final class LaunchListViewModel: LaunchListViewModelProtocol {
+final class DefaultLaunchListViewModel: LaunchListViewModel {
     typealias LaunchModel = LaunchView.Model
     var launchModels = [
         LaunchModel(
@@ -35,4 +35,5 @@ final class LaunchListViewModel: LaunchListViewModelProtocol {
             missionStatus: .Icon.failure
         )
     ]
+    
 }

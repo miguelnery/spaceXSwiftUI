@@ -1,29 +1,29 @@
-import Combine
 import Foundation
 
-final class URLSessionService<SessionWrapper: URLSessionWrapperProtocol> {
+final class URLSessionService<SessionWrapper: URLSessionWrapper> {
     private let urlSession: SessionWrapper
     
-    init(urlSession: SessionWrapper) {
+    init(urlSession: SessionWrapper = DefaultURLSessionWrapper()) {
         self.urlSession = urlSession
     }
 }
 
 extension URLSessionService: EndpointFectcher {
-    func publisher(for endpoint: Endpoint) -> AnyPublisher<Data, ServiceError> {
+    func fetch(from endpoint: Endpoint) async -> Result<Data, ServiceError> {
         guard let url = endpoint.urlRequest?.url else {
-            return Fail<_, ServiceError>(error: .badURL)
-                .eraseToAnyPublisher()
+            return .failure(.badURL)
         }
-        return urlSession
-            .dataTaskPublisher(for: url)
-            .map { $0.data }
-            .mapError { ServiceError.urlError($0) }
-            .eraseToAnyPublisher()
+        
+        if let (data, _) = try? await urlSession.data(from: url, delegate: nil) {
+            return .success(data)
+        } else {
+            return .failure(.request)
+        }
     }
 }
 
 enum ServiceError: Error, Equatable {
     case badURL
-    case urlError(URLError)
+    case request
+    case decode
 }

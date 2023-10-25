@@ -3,7 +3,7 @@ import Foundation
 import XCTest
 @testable import SpaceXLaunches
 
-final class URLSessionWrapperMock: URLSessionWrapperProtocol {
+final class URLSessionWrapperMock: URLSessionWrapper {
     var dataTaskPublisherImpl: ((URL) -> AnyDataTaskPublisher)?
     func dataTaskPublisher(for url: URL) -> AnyDataTaskPublisher {
         guard let impl = dataTaskPublisherImpl else {

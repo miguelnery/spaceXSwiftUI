@@ -1,13 +1,10 @@
 import Combine
 import Foundation
 
-protocol URLSessionWrapperProtocol {
-    typealias AnyDataTaskPublisher = AnyPublisher<(data: Data, response: URLResponse), URLError>
-    
-    func dataTaskPublisher(for url: URL) -> AnyDataTaskPublisher
+protocol URLSessionWrapper {
+    func data(from url: URL, delegate: URLSessionTaskDelegate?) async throws -> (Data, URLResponse)
 }
-
-final class URLSessionWrapper {
+final class DefaultURLSessionWrapper {
     private let urlSession: URLSession
     
     init(urlSession: URLSession = .shared) {
@@ -15,10 +12,8 @@ final class URLSessionWrapper {
     }
 }
 
-extension URLSessionWrapper: URLSessionWrapperProtocol {
-    func dataTaskPublisher(for url: URL) -> AnyDataTaskPublisher {
-        urlSession
-            .dataTaskPublisher(for: url)
-            .eraseToAnyPublisher()
+extension DefaultURLSessionWrapper: URLSessionWrapper {
+    func data(from url: URL, delegate: URLSessionTaskDelegate? = nil) async throws -> (Data, URLResponse) {
+        try await urlSession.data(from: url)
     }
 }

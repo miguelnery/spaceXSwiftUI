@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct LaunchListView<ViewModel: LaunchListViewModelProtocol>: View {
+struct LaunchListView<ViewModel: LaunchListViewModel>: View {
     @ObservedObject
     var viewModel: ViewModel
     

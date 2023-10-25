@@ -26,6 +26,7 @@
 		46F186B82AE7B9EF00472CFD /* URLSessionWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F186B72AE7B9EF00472CFD /* URLSessionWrapper.swift */; };
 		46F186BA2AE7C1C400472CFD /* EndpointMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F186B92AE7C1C400472CFD /* EndpointMock.swift */; };
 		46F186BC2AE7E89600472CFD /* XCTest+awaitPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F186BB2AE7E89600472CFD /* XCTest+awaitPublisher.swift */; };
+		46F186BE2AE7ED1900472CFD /* LaunchListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F186BD2AE7ED1900472CFD /* LaunchListService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		46F186B72AE7B9EF00472CFD /* URLSessionWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionWrapper.swift; sourceTree = "<group>"; };
 		46F186B92AE7C1C400472CFD /* EndpointMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointMock.swift; sourceTree = "<group>"; };
 		46F186BB2AE7E89600472CFD /* XCTest+awaitPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTest+awaitPublisher.swift"; sourceTree = "<group>"; };
+		46F186BD2AE7ED1900472CFD /* LaunchListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 				46F186992AE575D600472CFD /* LaunchListView.swift */,
 				46F1869B2AE5766C00472CFD /* LaunchView.swift */,
 				46F1869F2AE5BAB200472CFD /* LaunchListViewModel.swift */,
+				46F186BD2AE7ED1900472CFD /* LaunchListService.swift */,
 			);
 			path = LaunchList;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				46F186A32AE5E37F00472CFD /* InfoHStack.swift in Sources */,
 				46F186B82AE7B9EF00472CFD /* URLSessionWrapper.swift in Sources */,
 				46F1869C2AE5766C00472CFD /* LaunchView.swift in Sources */,
+				46F186BE2AE7ED1900472CFD /* LaunchListService.swift in Sources */,
 				46F186B02AE7204C00472CFD /* URLSessionService.swift in Sources */,
 				46F1869E2AE5B3BB00472CFD /* Icon.swift in Sources */,
 				46F186AC2AE68CF500472CFD /* SpaceXEndpoint.swift in Sources */,

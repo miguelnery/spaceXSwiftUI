@@ -6,5 +6,6 @@ protocol Endpoint {
 }
 
 protocol EndpointFectcher {
-    func publisher(for endpoint: Endpoint) -> AnyPublisher<Data, ServiceError>
+//    func publisher(for endpoint: Endpoint) -> AnyPublisher<Data, ServiceError>
+    func fetch(from endpoint: Endpoint) async -> Result<Data, ServiceError>
 }
