@@ -1,4 +1,4 @@
-import Combine
+import Foundation
 
 protocol LaunchListViewModel: ObservableObject {
     var launchModels: [LaunchView.Model] { get }
