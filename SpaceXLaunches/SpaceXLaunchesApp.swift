@@ -4,7 +4,7 @@ import SwiftUI
 struct SpaceXLaunchesApp: App {
     var body: some Scene {
         WindowGroup {
-            LaunchListView(viewModel: DefaultLaunchListViewModel())
+            LaunchListView(viewModel: DefaultLaunchListViewModel(service: LaunchListServiceFactory.make()))
         }
     }
 }

@@ -4,11 +4,11 @@ protocol LaunchListService {
     func fetchLaunches() async -> Result<[SpaceXLaunch], ServiceError>
 }
 
-final class DefaultLaunchListService {
-    private let fetcher: EndpointFectcher
+final class DefaultLaunchListService<Fetcher: EndpointFectcher> {
+    private let fetcher: Fetcher
     private let jsonDecoder: JSONDecoder
     
-    init(fetcher: EndpointFectcher,
+    init(fetcher: Fetcher,
          jsonDecoder: JSONDecoder) {
         self.fetcher = fetcher
         self.jsonDecoder = jsonDecoder

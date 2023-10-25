@@ -4,8 +4,14 @@ protocol LaunchListViewModel: ObservableObject {
     var launchModels: [LaunchView.Model] { get }
 }
 
-final class DefaultLaunchListViewModel: LaunchListViewModel {
+final class DefaultLaunchListViewModel<Service: LaunchListService>: LaunchListViewModel {
     typealias LaunchModel = LaunchView.Model
+    let service: Service
+    
+    init(service: Service) {
+        self.service = service
+    }
+    
     var launchModels = [
         LaunchModel(
             infoFields: .init(fields: [
