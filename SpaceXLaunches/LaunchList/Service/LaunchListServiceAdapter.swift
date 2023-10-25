@@ -4,22 +4,27 @@ protocol LaunchListServiceAdapter {
 
 final class DefaultLaunchListServiceAdapter: LaunchListServiceAdapter {
     func adapt(launches: [SpaceXLaunch]) -> [LaunchView.Model] {
-//        launches.map { item in
-//            LaunchView.Model(infoFields: InfoHStack.Model(), missionStatus: <#T##UIImage#>)
-//        }
-        []
+        launches.map(makeLaunchViewModel(_:))
     }
 }
 
-//// MARK: - Adapt Launches Helpers
-//private extension DefaultLaunchListServiceAdapter {
-//    private func makeInfoField(_ launches: [SpaceXLaunch]) -> InfoHStack.Model {
-//        let fields = [
-//            (title: "Mission:", value: ""),
-//            (title: "Date/time:", value: ""),
-//            (title: "Rocket:", value: ""),
-//            (title: "Days from now:", value: "")
-//        ]
-//        InfoHStack.Model(fields: [(title: "", value: "")])
-//    }
-//}
+// MARK: - Adapt Launches Helpers
+private extension DefaultLaunchListServiceAdapter {
+    private func makeLaunchViewModel(_ launch: SpaceXLaunch) -> LaunchView.Model {
+        LaunchView.Model(
+            infoFields: makeInfoField(launch),
+            missionStatus: launch.success.icon.image
+        )
+    }
+    
+    private func makeInfoField(_ launch: SpaceXLaunch) -> InfoHStack.Model {
+        typealias InfoFields = Localized.InfoFields
+        let fields = [
+            (title: "\(InfoFields.mission):", value: launch.name),
+            (title: "\(InfoFields.dateTime):", value: "10/01/1995"),
+            (title: "\(InfoFields.rocket):", value: "loqueto"),
+            (title: "\(InfoFields.daysFromNow):", value: "365")
+        ]
+        return InfoHStack.Model(fields: fields)
+    }
+}
