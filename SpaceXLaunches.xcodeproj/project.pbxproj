@@ -12,7 +12,7 @@
 		4604597C2AE461F0002B018A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4604597B2AE461F0002B018A /* Preview Assets.xcassets */; };
 		460459902AE461F2002B018A /* SpaceXLaunchesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4604598F2AE461F2002B018A /* SpaceXLaunchesUITests.swift */; };
 		460459922AE461F2002B018A /* SpaceXLaunchesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460459912AE461F2002B018A /* SpaceXLaunchesUITestsLaunchTests.swift */; };
-		460746A72AEA76D400218612 /* LaunchListServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460746A62AEA76D400218612 /* LaunchListServiceTests.swift */; };
+		460746A72AEA76D400218612 /* DefaultLaunchListServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460746A62AEA76D400218612 /* DefaultLaunchListServiceTests.swift */; };
 		460746A92AEA775D00218612 /* EndpointFetcherMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460746A82AEA775D00218612 /* EndpointFetcherMock.swift */; };
 		460746AC2AEA7A7400218612 /* JSONDecoder+keyDecodingStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460746AB2AEA7A7400218612 /* JSONDecoder+keyDecodingStrategy.swift */; };
 		460746AF2AEA7E6900218612 /* StubData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460746AE2AEA7E6900218612 /* StubData.swift */; };
@@ -64,7 +64,7 @@
 		4604598B2AE461F2002B018A /* SpaceXLaunchesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpaceXLaunchesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4604598F2AE461F2002B018A /* SpaceXLaunchesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXLaunchesUITests.swift; sourceTree = "<group>"; };
 		460459912AE461F2002B018A /* SpaceXLaunchesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXLaunchesUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		460746A62AEA76D400218612 /* LaunchListServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListServiceTests.swift; sourceTree = "<group>"; };
+		460746A62AEA76D400218612 /* DefaultLaunchListServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLaunchListServiceTests.swift; sourceTree = "<group>"; };
 		460746A82AEA775D00218612 /* EndpointFetcherMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointFetcherMock.swift; sourceTree = "<group>"; };
 		460746AB2AEA7A7400218612 /* JSONDecoder+keyDecodingStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+keyDecodingStrategy.swift"; sourceTree = "<group>"; };
 		460746AE2AEA7E6900218612 /* StubData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubData.swift; sourceTree = "<group>"; };
@@ -187,7 +187,7 @@
 		460746A32AEA767F00218612 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				460746A62AEA76D400218612 /* LaunchListServiceTests.swift */,
+				460746A62AEA76D400218612 /* DefaultLaunchListServiceTests.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -473,7 +473,7 @@
 				460746A92AEA775D00218612 /* EndpointFetcherMock.swift in Sources */,
 				46F186B62AE7B78500472CFD /* URLSessionWrapperMock.swift in Sources */,
 				46F186BA2AE7C1C400472CFD /* EndpointMock.swift in Sources */,
-				460746A72AEA76D400218612 /* LaunchListServiceTests.swift in Sources */,
+				460746A72AEA76D400218612 /* DefaultLaunchListServiceTests.swift in Sources */,
 				46F186B32AE7B76100472CFD /* URLSessionServiceTests.swift in Sources */,
 				460746AF2AEA7E6900218612 /* StubData.swift in Sources */,
 			);
