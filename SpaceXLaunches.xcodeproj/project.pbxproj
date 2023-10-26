@@ -15,6 +15,7 @@
 		460746A72AEA76D400218612 /* LaunchListServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460746A62AEA76D400218612 /* LaunchListServiceTests.swift */; };
 		460746A92AEA775D00218612 /* EndpointFetcherMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460746A82AEA775D00218612 /* EndpointFetcherMock.swift */; };
 		460746AC2AEA7A7400218612 /* JSONDecoder+keyDecodingStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460746AB2AEA7A7400218612 /* JSONDecoder+keyDecodingStrategy.swift */; };
+		460746AF2AEA7E6900218612 /* StubData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460746AE2AEA7E6900218612 /* StubData.swift */; };
 		465A526A2AE997060026F2F8 /* LaunchListServiceAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A52692AE997060026F2F8 /* LaunchListServiceAdapter.swift */; };
 		465A526D2AE99FB30026F2F8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 465A526C2AE99FB30026F2F8 /* Localizable.strings */; };
 		465A526F2AE9A73B0026F2F8 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A526E2AE9A73B0026F2F8 /* Strings+Generated.swift */; };
@@ -66,6 +67,7 @@
 		460746A62AEA76D400218612 /* LaunchListServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListServiceTests.swift; sourceTree = "<group>"; };
 		460746A82AEA775D00218612 /* EndpointFetcherMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointFetcherMock.swift; sourceTree = "<group>"; };
 		460746AB2AEA7A7400218612 /* JSONDecoder+keyDecodingStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+keyDecodingStrategy.swift"; sourceTree = "<group>"; };
+		460746AE2AEA7E6900218612 /* StubData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubData.swift; sourceTree = "<group>"; };
 		465A52692AE997060026F2F8 /* LaunchListServiceAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListServiceAdapter.swift; sourceTree = "<group>"; };
 		465A526C2AE99FB30026F2F8 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		465A526E2AE9A73B0026F2F8 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 		460459842AE461F1002B018A /* SpaceXLaunchesTests */ = {
 			isa = PBXGroup;
 			children = (
+				460746AD2AEA7E5D00218612 /* StubData */,
 				460746A22AEA767200218612 /* LaunchList */,
 				46F186B12AE7215E00472CFD /* Network */,
 			);
@@ -195,6 +198,14 @@
 				460746AB2AEA7A7400218612 /* JSONDecoder+keyDecodingStrategy.swift */,
 			);
 			path = Commons;
+			sourceTree = "<group>";
+		};
+		460746AD2AEA7E5D00218612 /* StubData */ = {
+			isa = PBXGroup;
+			children = (
+				460746AE2AEA7E6900218612 /* StubData.swift */,
+			);
+			path = StubData;
 			sourceTree = "<group>";
 		};
 		465A526B2AE99F9A0026F2F8 /* Localized */ = {
@@ -464,6 +475,7 @@
 				46F186BA2AE7C1C400472CFD /* EndpointMock.swift in Sources */,
 				460746A72AEA76D400218612 /* LaunchListServiceTests.swift in Sources */,
 				46F186B32AE7B76100472CFD /* URLSessionServiceTests.swift in Sources */,
+				460746AF2AEA7E6900218612 /* StubData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

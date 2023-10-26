@@ -1,4 +1,4 @@
-struct SpaceXLaunch: Codable {
+struct SpaceXLaunch: Codable, Equatable {
     let name: String
     let dateUtc: String
     let rocket: String
@@ -7,10 +7,10 @@ struct SpaceXLaunch: Codable {
 }
 
 extension SpaceXLaunch {
-    struct Links: Codable {
+    struct Links: Codable, Equatable {
         let patch: Patch
         
-        struct Patch: Codable {
+        struct Patch: Codable, Equatable {
             let small: String?
             let large: String?
         }
