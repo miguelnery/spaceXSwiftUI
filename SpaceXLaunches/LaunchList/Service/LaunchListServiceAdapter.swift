@@ -1,10 +1,15 @@
 protocol LaunchListServiceAdapter {
-    func adapt(launches: [SpaceXLaunch]) -> [LaunchView.Model]
+    func adapt(launches: Result<[SpaceXLaunch], ServiceError>) -> Result<[LaunchView.Model], ServiceError>
 }
 
 final class DefaultLaunchListServiceAdapter: LaunchListServiceAdapter {
-    func adapt(launches: [SpaceXLaunch]) -> [LaunchView.Model] {
-        launches.map(makeLaunchViewModel(_:))
+    func adapt(launches: Result<[SpaceXLaunch], ServiceError>) -> Result<[LaunchView.Model], ServiceError> {
+        switch launches {
+        case .success(let launches):
+            return .success(launches.map(makeLaunchViewModel(_:)))
+        case .failure(let error):
+            return .failure(error)
+        }
     }
 }
 
@@ -13,7 +18,7 @@ private extension DefaultLaunchListServiceAdapter {
     private func makeLaunchViewModel(_ launch: SpaceXLaunch) -> LaunchView.Model {
         LaunchView.Model(
             infoFields: makeInfoField(launch),
-            missionStatus: launch.success.icon.image
+            missionStatus: launch.missionSuccessIcon.image
         )
     }
     
@@ -26,5 +31,16 @@ private extension DefaultLaunchListServiceAdapter {
             (title: "\(InfoFields.daysFromNow):", value: "365")
         ]
         return InfoHStack.Model(fields: fields)
+    }
+}
+
+private extension SpaceXLaunch {
+    var missionSuccessIcon: ImageAsset {
+        switch success {
+        case .none:
+            return Asset.unknown
+        case .some(let isSuccessfull):
+            return isSuccessfull ? Asset.success : Asset.failure
+        }
     }
 }
