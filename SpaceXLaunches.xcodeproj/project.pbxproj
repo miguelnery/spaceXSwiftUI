@@ -31,7 +31,6 @@
 		46F186B62AE7B78500472CFD /* URLSessionWrapperMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F186B52AE7B78500472CFD /* URLSessionWrapperMock.swift */; };
 		46F186B82AE7B9EF00472CFD /* URLSessionWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F186B72AE7B9EF00472CFD /* URLSessionWrapper.swift */; };
 		46F186BA2AE7C1C400472CFD /* EndpointMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F186B92AE7C1C400472CFD /* EndpointMock.swift */; };
-		46F186BC2AE7E89600472CFD /* XCTest+awaitPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F186BB2AE7E89600472CFD /* XCTest+awaitPublisher.swift */; };
 		46F186BE2AE7ED1900472CFD /* LaunchListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F186BD2AE7ED1900472CFD /* LaunchListService.swift */; };
 /* End PBXBuildFile section */
 
@@ -80,7 +79,6 @@
 		46F186B52AE7B78500472CFD /* URLSessionWrapperMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionWrapperMock.swift; sourceTree = "<group>"; };
 		46F186B72AE7B9EF00472CFD /* URLSessionWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionWrapper.swift; sourceTree = "<group>"; };
 		46F186B92AE7C1C400472CFD /* EndpointMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointMock.swift; sourceTree = "<group>"; };
-		46F186BB2AE7E89600472CFD /* XCTest+awaitPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTest+awaitPublisher.swift"; sourceTree = "<group>"; };
 		46F186BD2AE7ED1900472CFD /* LaunchListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -154,7 +152,6 @@
 			isa = PBXGroup;
 			children = (
 				46F186B12AE7215E00472CFD /* Network */,
-				46F186BB2AE7E89600472CFD /* XCTest+awaitPublisher.swift */,
 			);
 			path = SpaceXLaunchesTests;
 			sourceTree = "<group>";
@@ -428,7 +425,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46F186BC2AE7E89600472CFD /* XCTest+awaitPublisher.swift in Sources */,
 				46F186B62AE7B78500472CFD /* URLSessionWrapperMock.swift in Sources */,
 				46F186BA2AE7C1C400472CFD /* EndpointMock.swift in Sources */,
 				46F186B32AE7B76100472CFD /* URLSessionServiceTests.swift in Sources */,

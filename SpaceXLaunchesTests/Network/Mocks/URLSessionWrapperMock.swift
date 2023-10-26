@@ -1,16 +1,13 @@
-import Combine
-import Foundation
 import XCTest
 @testable import SpaceXLaunches
 
 final class URLSessionWrapperMock: URLSessionWrapper {
-    var dataTaskPublisherImpl: ((URL) -> AnyDataTaskPublisher)?
-    func dataTaskPublisher(for url: URL) -> AnyDataTaskPublisher {
-        guard let impl = dataTaskPublisherImpl else {
-            XCTFail("Must provide implemententation before calling this method.")
-            return Fail<_, URLError>(error: .init(.unknown))
-                .eraseToAnyPublisher()
+    var dataFromURLImpl: ((URL) throws -> (Data, URLResponse))?
+    func data(from url: URL, delegate: URLSessionTaskDelegate?) async throws -> (Data, URLResponse) {
+        guard let impl = dataFromURLImpl else {
+            XCTFail("Must define implementation before calling this method.")
+            throw URLError(.unknown)
         }
-        return impl(url)
+        return try impl(url)
     }
 }
