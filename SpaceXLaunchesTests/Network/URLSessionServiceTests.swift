@@ -24,4 +24,3 @@ final class URLSessionServiceTests: XCTestCase {
         XCTAssertEqual(result, .success(expectedData))
     }
 }
-
