@@ -2,6 +2,7 @@ protocol LaunchListServiceAdapter {
     typealias Launches = Result<[SpaceXLaunch], ServiceError>
     typealias Rockets = Result<[SpaceXRocket], ServiceError>
     typealias LaunchViewModels = Result<[LaunchView.Model], ServiceError>
+    
     func adapt(
         launches: Launches,
         rockets: Rockets
@@ -10,9 +11,9 @@ protocol LaunchListServiceAdapter {
 
 final class DefaultLaunchListServiceAdapter: LaunchListServiceAdapter {
     func adapt(
-        launches: Result<[SpaceXLaunch], ServiceError>,
-        rockets: Result<[SpaceXRocket], ServiceError>
-    ) -> Result<[LaunchView.Model], ServiceError> {
+        launches: Launches,
+        rockets: Rockets
+    ) -> LaunchViewModels {
         let rockets = try? rockets.get()
         switch launches {
         case .success(let launches):
