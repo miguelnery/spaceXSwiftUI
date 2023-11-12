@@ -17,6 +17,7 @@
 		460746AC2AEA7A7400218612 /* JSONDecoder+keyDecodingStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460746AB2AEA7A7400218612 /* JSONDecoder+keyDecodingStrategy.swift */; };
 		460746AF2AEA7E6900218612 /* StubData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460746AE2AEA7E6900218612 /* StubData.swift */; };
 		460746B22AEA91C400218612 /* DefaultLaunchListServiceAdapter+launchesHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460746B12AEA91C400218612 /* DefaultLaunchListServiceAdapter+launchesHelpers.swift */; };
+		46269AC12AEBFEE300AD1177 /* SpaceXRocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46269AC02AEBFEE300AD1177 /* SpaceXRocket.swift */; };
 		465A526A2AE997060026F2F8 /* LaunchListServiceAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A52692AE997060026F2F8 /* LaunchListServiceAdapter.swift */; };
 		465A526D2AE99FB30026F2F8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 465A526C2AE99FB30026F2F8 /* Localizable.strings */; };
 		465A526F2AE9A73B0026F2F8 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A526E2AE9A73B0026F2F8 /* Strings+Generated.swift */; };
@@ -70,6 +71,7 @@
 		460746AB2AEA7A7400218612 /* JSONDecoder+keyDecodingStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+keyDecodingStrategy.swift"; sourceTree = "<group>"; };
 		460746AE2AEA7E6900218612 /* StubData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubData.swift; sourceTree = "<group>"; };
 		460746B12AEA91C400218612 /* DefaultLaunchListServiceAdapter+launchesHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefaultLaunchListServiceAdapter+launchesHelpers.swift"; sourceTree = "<group>"; };
+		46269AC02AEBFEE300AD1177 /* SpaceXRocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXRocket.swift; sourceTree = "<group>"; };
 		465A52692AE997060026F2F8 /* LaunchListServiceAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListServiceAdapter.swift; sourceTree = "<group>"; };
 		465A526C2AE99FB30026F2F8 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		465A526E2AE9A73B0026F2F8 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				460459722AE461EA002B018A /* Products */,
+				460746AA2AEA7A5000218612 /* Commons */,
 				460459732AE461EA002B018A /* SpaceXLaunches */,
 				460459842AE461F1002B018A /* SpaceXLaunchesTests */,
 				4604598E2AE461F2002B018A /* SpaceXLaunchesUITests */,
@@ -140,13 +143,12 @@
 		460459732AE461EA002B018A /* SpaceXLaunches */ = {
 			isa = PBXGroup;
 			children = (
-				460746AA2AEA7A5000218612 /* Commons */,
 				460459742AE461EA002B018A /* SpaceXLaunchesApp.swift */,
 				46F186982AE575C700472CFD /* LaunchList */,
+				46F186A12AE5E36600472CFD /* UICommons */,
 				46F186A42AE688CA00472CFD /* Network */,
 				4604597A2AE461F0002B018A /* Preview Content */,
 				46878B952AE9B54000FCAEB2 /* Resources */,
-				46F186A12AE5E36600472CFD /* UICommons */,
 			);
 			path = SpaceXLaunches;
 			sourceTree = "<group>";
@@ -292,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				46F186A52AE688DC00472CFD /* SpaceXLaunch.swift */,
+				46269AC02AEBFEE300AD1177 /* SpaceXRocket.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -457,6 +460,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				465A52722AE9AA730026F2F8 /* LaunchListServiceFactory.swift in Sources */,
+				46269AC12AEBFEE300AD1177 /* SpaceXRocket.swift in Sources */,
 				46F186A62AE688DC00472CFD /* SpaceXLaunch.swift in Sources */,
 				460459752AE461EA002B018A /* SpaceXLaunchesApp.swift in Sources */,
 				46F186A92AE68C5500472CFD /* Endpoint.swift in Sources */,

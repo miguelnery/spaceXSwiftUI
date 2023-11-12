@@ -17,7 +17,10 @@ final class DefaultLaunchListViewModel<Service: LaunchListService, Adapter: Laun
     
     @MainActor
     private func fetchModels() async {
-        let result = adapter.adapt(launches: await service.fetchLaunches())
+        let result = adapter.adapt(
+            launches: await service.fetchLaunches(),
+            rockets: await service.fetchRockets()
+        )
         guard let launches = try? result.get() else {
             return // present error
         }

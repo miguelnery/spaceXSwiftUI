@@ -1,7 +1,7 @@
 import Foundation
 
 extension DefaultLaunchListServiceAdapter {
-    func makeLaunchViewModel(_ launch: SpaceXLaunch) -> LaunchView.Model {
+    func makeLaunchViewModel(_ launch: SpaceXLaunch, rockets: [SpaceXRocket]) -> LaunchView.Model {
         LaunchView.Model(
             infoFields: makeInfoField(launch),
             missionStatus: launch.missionSuccessIcon.image
@@ -11,13 +11,14 @@ extension DefaultLaunchListServiceAdapter {
 
 // MARK: - General Helpers
 extension DefaultLaunchListServiceAdapter {
-    private func makeInfoField(_ launch: SpaceXLaunch) -> InfoHStack.Model {
-        typealias InfoFields = Localized.InfoFields
+    typealias InfoFields = Localized.InfoFields
+    private func makeInfoField(_ launch: SpaceXLaunch, rockets: [SpaceXRocket]) -> InfoHStack.Model {
+        
         let fields = [
             (title: "\(InfoFields.mission):", value: launch.name),
             makeDateInfoField(utcStringDate: launch.dateUtc),
             (title: "\(InfoFields.rocket):", value: "loqueto"),
-            (title: "\(InfoFields.daysFromNow):", value: "365")
+            makeDaysOffsetInfoField(from: dateUTCStringToDate(launch.dateUtc))
         ]
         return InfoHStack.Model(fields: fields)
     }
@@ -32,7 +33,7 @@ extension DefaultLaunchListServiceAdapter {
         } else {
             value = "na"
         }
-        return (title: "\(Localized.InfoFields.dateTime):", value: value)
+        return (title: "\(InfoFields.dateTime):", value: value)
     }
     
     private func dateUTCStringToDate(_ utcDateString: String) -> Date? {
@@ -45,6 +46,32 @@ extension DefaultLaunchListServiceAdapter {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy 'at' HH'H'"
         return formatter.string(from: date)
+    }
+}
+
+// MARK: - Days Offset
+extension DefaultLaunchListServiceAdapter {
+    private func makeDaysOffsetInfoField(from date: Date?) -> (String, String) {
+        let title: String
+        let value: String
+        if let date = date,
+           let daysOffset = calculateDaysOffset(from: date) {
+            title = daysOffset < 0  ? InfoFields.daysSince : InfoFields.daysFromNow
+            value = String(abs(daysOffset))
+        } else {
+            title = InfoFields.daysFromNow
+            value = "na"
+        }
+        return ("\(title):", value)
+    }
+    
+    private func calculateDaysOffset(from date: Date) -> Int? {
+        let calendar = Calendar.current
+        let date1 = calendar.startOfDay(for: Date())
+        let date2 = calendar.startOfDay(for: date)
+        let components = calendar.dateComponents([.day], from: date1, to: date2)
+        
+        return components.day
     }
 }
 

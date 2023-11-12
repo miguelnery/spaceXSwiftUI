@@ -15,6 +15,8 @@ internal enum Localized {
     internal static let dateTime = Localized.tr("Localizable", "InfoFields.dateTime", fallback: "Date/time")
     /// Days from now
     internal static let daysFromNow = Localized.tr("Localizable", "InfoFields.daysFromNow", fallback: "Days from now")
+    /// Days since
+    internal static let daysSince = Localized.tr("Localizable", "InfoFields.daysSince", fallback: "Days since")
     /// Mission
     internal static let mission = Localized.tr("Localizable", "InfoFields.mission", fallback: "Mission")
     /// Rocket

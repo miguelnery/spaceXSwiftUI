@@ -1,12 +1,24 @@
 protocol LaunchListServiceAdapter {
-    func adapt(launches: Result<[SpaceXLaunch], ServiceError>) -> Result<[LaunchView.Model], ServiceError>
+    typealias Launches = Result<[SpaceXLaunch], ServiceError>
+    typealias Rockets = Result<[SpaceXRocket], ServiceError>
+    typealias LaunchViewModels = Result<[LaunchView.Model], ServiceError>
+    func adapt(
+        launches: Launches,
+        rockets: Rockets
+    ) -> LaunchViewModels
 }
 
 final class DefaultLaunchListServiceAdapter: LaunchListServiceAdapter {
-    func adapt(launches: Result<[SpaceXLaunch], ServiceError>) -> Result<[LaunchView.Model], ServiceError> {
+    func adapt(
+        launches: Result<[SpaceXLaunch], ServiceError>,
+        rockets: Result<[SpaceXRocket], ServiceError>
+    ) -> Result<[LaunchView.Model], ServiceError> {
+        let rockets = try? rockets.get()
         switch launches {
         case .success(let launches):
-            return .success(launches.map(makeLaunchViewModel(_:)))
+            return .success(launches.map {
+                makeLaunchViewModel($0, rockets: rockets ?? [])
+            })
         case .failure(let error):
             return .failure(error)
         }
