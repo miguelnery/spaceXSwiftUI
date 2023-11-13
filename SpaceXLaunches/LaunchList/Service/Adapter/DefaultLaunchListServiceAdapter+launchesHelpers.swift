@@ -6,7 +6,11 @@ extension DefaultLaunchListServiceAdapter {
         rockets: [SpaceXRocket]
     ) -> LaunchView.Model {
         LaunchView.Model(
-            infoFields: makeInfoFields(launch, rockets: rockets),
+            iconURL: makeIconURL(launch),
+            infoFields: makeInfoFields(
+                launch,
+                rockets: rockets
+            ),
             missionStatus: launch.missionSuccessIcon.image
         )
     }
@@ -58,6 +62,15 @@ extension DefaultLaunchListServiceAdapter {
             value = "na"
         }
         return ("\(title):", value)
+    }
+}
+
+// MARK: - Icon Helpers
+extension DefaultLaunchListServiceAdapter {
+    private func makeIconURL(_ launch: SpaceXLaunch) -> URL? {
+        let patch = launch.links.patch
+        let urlString = patch.large ?? patch.small ?? ""
+        return URL(string: urlString)
     }
 }
 
