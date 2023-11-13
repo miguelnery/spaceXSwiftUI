@@ -36,3 +36,16 @@ extension SpaceXLaunch.Links.Patch {
     }
 }
 
+extension SpaceXRocket {
+    static func stub(
+        id: String = "id",
+        name: String = "name",
+        type: String = "type"
+    ) -> SpaceXRocket {
+        .init(
+            id: id,
+            name: name,
+            type: type
+        )
+    }
+}
